@@ -1,0 +1,33 @@
+<launch>
+
+  <let name="urdf_path"
+        value="$(find-pkg-share neo)/urdf/myrobot.xacro" />
+
+    <let name="rviz_config_path"
+        value="$(find-pkg-share neo)/rviz/urdf_config.rviz" />
+
+    <let name="gazebo_config_path"
+        value="$(find-pkg-share neo)/config/gz_bridge.yaml" />
+
+    <node pkg="robot_state_publisher" exec="robot_state_publisher">
+        <param name="robot_description"
+               value="$(command 'xacro $(var urdf_path)')" />
+    </node>
+
+
+  <node pkg="controller_manager" exec="ros2_control_node">
+    <param from="$(find-pkg-share neo)/config/controller.yaml" />
+  </node>
+
+  <node pkg="controller_manager" exec="spawner" args="joint_state_broadcaster" />
+
+  <node pkg="controller_manager" exec="spawner" args="diff_drive_controller" />
+
+  <node pkg="rviz2" exec="rviz2" output="screen"
+        args="-d $(var rviz_config_path)" />
+
+</launch>
+
+
+<!-- ros2 run teleop_twist_keyboard teleop_twist_keyboard \
+--ros-args -r /cmd_vel:=/diff_drive_controller/cmd_vel -p stamped:=true -->
