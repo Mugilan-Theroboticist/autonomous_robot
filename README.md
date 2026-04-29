@@ -7,6 +7,8 @@ The robot can be launched in **Gazebo and RViz**, supports multiple sensors, and
 ---<img width="1920" height="1080" alt="Screenshot from 2026-04-24 18-19-40" src="https://github.com/user-attachments/assets/82154230-4044-4518-8747-5757b0c89cd8" />
 
 
+
+
 ## 🚀 Features
 
 * ✅ Full robot simulation in Gazebo
@@ -24,6 +26,8 @@ The robot can be launched in **Gazebo and RViz**, supports multiple sensors, and
 * ✅ Multiple simulation environments (worlds)
 
 ---
+<img width="1080" height="607" alt="image" src="https://github.com/user-attachments/assets/6076bda2-c5b7-47c2-9fd7-bbd8582c694c" />
+
 
 ## 📁 Project Structure
 
@@ -73,6 +77,9 @@ neo/
 * Ubuntu 22.04
 
 ---
+
+<img width="1863" height="1017" alt="Screenshot from 2026-04-18 13-08-36" src="https://github.com/user-attachments/assets/27b6476d-ae15-435e-a43c-4d89a951822a" />
+
 
 ## 🔧 Installation
 
